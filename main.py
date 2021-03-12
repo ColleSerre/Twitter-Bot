@@ -7,10 +7,7 @@ def boot():
     url = "https://api.twitter.com/1.1/direct_messages/events/list.json"
 
     payload = {}
-    headers = {
-    'Authorization': 'OAuth oauth_consumer_key="evU44CQF1zDWuk5xbsevanivE",oauth_token="875370818552946688-xQFoplPIaNNLtreqYNYn5I7n5S7RgEY",oauth_signature_method="HMAC-SHA1",oauth_timestamp="1597353192",oauth_nonce="zd0XmW94OuM",oauth_version="1.0",oauth_signature="SmaIbfgajA4DsANfTvM%2BG%2Fb69Jk%3D"',
-    'Cookie': 'personalization_id="v1_2/hmGenDkuo9anjp3e7TdA=="; guest_id=v1%3A159722505884068591'
-    }
+    headers = # Authorization headers from the Twitter API go here
 
     response = requests.request("GET", url, headers=headers, data = payload)
 
@@ -26,10 +23,7 @@ def boot():
     url = "https://api.twitter.com/1.1/followers/list.json"
 
     payload = {}
-    headers = {
-    'Authorization': 'OAuth oauth_consumer_key="evU44CQF1zDWuk5xbsevanivE",oauth_token="875370818552946688-xQFoplPIaNNLtreqYNYn5I7n5S7RgEY",oauth_signature_method="HMAC-SHA1",oauth_timestamp="1597353172",oauth_nonce="FhMn88x4KWt",oauth_version="1.0",oauth_signature="Gn%2B4WacQ1K7G3j%2BvBYguzdIDfGY%3D"',
-    'Cookie': 'personalization_id="v1_2/hmGenDkuo9anjp3e7TdA=="; guest_id=v1%3A159722505884068591'
-    }
+    headers = # And here again
 
     r = requests.request("GET", url, headers=headers, data = payload)
 
@@ -64,11 +58,7 @@ def send_dm():
         print(type(payload))
         file.close()
 
-    headers = {
-    'Content-Type': 'application/json',
-    'Authorization': 'OAuth oauth_consumer_key="evU44CQF1zDWuk5xbsevanivE",oauth_token="875370818552946688-xQFoplPIaNNLtreqYNYn5I7n5S7RgEY",oauth_signature_method="HMAC-SHA1",oauth_timestamp="1597353172",oauth_nonce="Dd1obqudVCi",oauth_version="1.0",oauth_signature="NdLU57hTbl3yEh6CcU4ec4UyG4Q%3D"',
-    'Cookie': 'personalization_id="v1_2/hmGenDkuo9anjp3e7TdA=="; guest_id=v1%3A159722505884068591'
-    }
+    headers = # And here again
 
     response = requests.request("POST", url, headers=headers, data = payload)
 
